@@ -49,7 +49,7 @@ class RundeckPlugin(object):
         elif type == 'dict':
             return dict(s.split('=') for s in value.splitlines())
         elif type == 'bool':
-            return bool(value)
+            return value == 'true'
         elif type == 'yaml':
             return yaml.load(value, Loader=yaml.FullLoader)
         else:
